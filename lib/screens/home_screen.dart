@@ -9,6 +9,7 @@ import 'package:myapp/widgets/destination_card.dart';
 import 'package:myapp/widgets/package_card.dart';
 import 'package:myapp/widgets/bottom_navigation_bar.dart';
 import 'package:myapp/widgets/custom_header.dart';
+import 'package:myapp/widgets/footer.dart';
 import 'package:myapp/widgets/home_header.dart';
 import 'package:provider/provider.dart';
 
@@ -112,10 +113,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
+            if (kIsWeb) const Footer(),
           ],
         ),
       ),
-      bottomNavigationBar: const CustomBottomNavigationBar(selectedIndex: 0),
+      bottomNavigationBar: kIsWeb ? null : const CustomBottomNavigationBar(selectedIndex: 0),
     );
   }
 }
